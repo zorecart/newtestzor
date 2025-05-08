@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load humanize %}
+{% include "core/messages.html" %}
+{% include "core/base-script.html" %}
+
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="ZOREVINA STORES">
+    <meta name="keywords" content="ZOREVINA STORES All laptops, phones and gadgets">
+    <meta name="author" content="ZOREVINA STORES">
+    <meta name="robots" content="noindex, nofollow">
+    <title>ZOREVINA STORES</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/dsbfohkyg/image/upload/v1715937899/zorev-removebg-preview_yjvxc5.png">
+
+    <link rel="stylesheet" href="{% static 'assetss/css/bootstrap.min.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'assetss/css/dataTables.bootstrap4.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assetss/plugins/fontawesome/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assetss/plugins/fontawesome/css/all.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assetss/css/style.css' %}">
+</head>
+
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '02f1a66f82861da50d808dd20f18e3ba67fb6d66';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>
+    
+<body>
+    <div id="global-loader">
+        <div class="whirly-loader"> </div>
+    </div>
+
+    <div class="main-wrapper">
+
+        <div class="header">
+
+            <div style="padding-bottom:10px; margin-bottom: 4px; max-height: 58px;" class="header-left active">
+                <a href="javascript:void"  class="logo logo-normal">
+<img src="https://res.cloudinary.com/dsbfohkyg/image/upload/v1715937899/zorev-removebg-preview_yjvxc5.png" alt>
+</a>
+                <a href="javascript:void" class="logo logo-white">
+<img src="https://res.cloudinary.com/dsbfohkyg/image/upload/v1715937899/zorev-removebg-preview_yjvxc5.png" alt>
+</a>
+                <a href="javascript:void" class="logo-small">
+<img src="https://res.cloudinary.com/dsbfohkyg/image/upload/v1715937899/zorev-removebg-preview_yjvxc5.png" alt>
+</a>
+                <a id="toggle_btn" href="javascript:void(0);">
+<i data-feather="chevrons-left" class="feather-16"></i>
+</a>
+            </div>
+
+
+            <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+<span class="bar-icon">
+<span></span>
+<span></span>
+<span></span>
+</span>
+</a>
+
+                <ul class="nav user-menu">
+<li style="max-width: 560px;" class="nav-item nav-searchinputs">
+    <div class="top-nav-message">
+        <div class="message-container">
+            <p class="scrolling-message"></p>
+        </div>
+    </div>
+</li>
+
+
+
+
+
+
+                <li class="nav-item nav-item-box">
+                    <a href="javascript:void(0);" id="btnFullscreen">
+                        <i data-feather="maximize"></i>
+                        </a>
+                </li>
+
+
+                <li class="nav-item dropdown nav-item-box">
+                    <a href="javascript:void(0);" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                        <i data-feather="bell"></i><span class="badge rounded-pill">2</span>
+                        </a>
+                    <div class="dropdown-menu notifications">
+                        <div class="topnav-dropdown-header">
+                            <span class="notification-title">Notifications</span>
+                        </div>
+                            <!-- core/transactions.html -->
+                            <div class="noti-content">
+                                
+                                <ul class="notification-list">  
+                                    <li class="notification-message">
+                                        <a>
+                                            <div class="media d-flex">
+                                                <!-- Display notification content here -->
+                                                <span class="avatar flex-shrink-0">
+                                                    <img alt src="https://res.cloudinary.com/dsbfohkyg/image/upload/v1715937899/zorev-removebg-preview_yjvxc5.png">
+                                                </span>
+                                                <div class="media-body flex-grow-1">
+                                                    <p class="noti-details">
+                                                        <span class="noti-title">Zorevina cart </span> Welcome Aboard.
+                                                        <span class="noti-title">Enjoy Our Fastest Services</span>
+                                                    </p>
+                                                    <p class="noti-time">
+                                                        <span class="notification-time">{{ obj.contact_date|naturaltime }}</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                {% for obj in notifications %}   
+                                    <li class="notification-message">
+                                        <a>
+                                            <div class="media d-flex">
+                                                <!-- Display notification content here -->
+                                                <span class="avatar flex-shrink-0">
+                                                    <img alt src="{{ obj.image.url }}">
+                                                </span>
+                                                <div class="media-body flex-grow-1">
+                                                    <p class="noti-details">
+                                                        <span class="noti-title">{{ obj.name }}</span> {{ obj.subject }}
+                                                        <span class="noti-title">{{ obj.message }}</span>
+                                                    </p>
+                                                    <p class="noti-time">
+                                                        <span class="notification-time">{{ obj.contact_date|naturaltime }}</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                </ul>
+                                
+                            </div>
+
+                        <div class="topnav-dropdown-footer">
+                            <a href="javascript:void"> Notifications</a>
+                        </div>
+
+                    </div>
+                </li>
+
+
+                <li class="nav-item dropdown has-arrow main-drop">
+                    <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
+                        <span class="user-info">
+                        <span class="user-letter">
+                        <img src="{{ user.account.picture.url }}" alt class="img-fluid">
+                        </span>
+                        <span class="user-detail">
+                        <span class="user-name">{{ user.username }}</span>
+                        <span class="user-role">{% if user.status == 'PENDING' %}
+                            <p class="link pending"><span style="color: darkolivegreen;">{{ user.status }}</span> <em class="icon ni ni-info" style="color: lightseagreen;"></em></p>
+                        {% elif user.status == 'UNVERIFIED' %}
+                            <p class="link unverified"><span style="color: red;">{{ user.status }}</span> <em class="icon ni ni-alert" style="color: red;"></em></p>
+                        {% elif user.status == 'VERIFIED' %}
+                            <p class="link verified"><strong><span style="color: green; font-weight: bold;">{{ user.status }}</span></strong> <em class="icon ni ni-check-circle" style="color: green;"></em></p>
+                        {% endif %}</span>
+                        </span>
+                        </span>
+                        </a>
+                    <div class="dropdown-menu menu-drop-user">
+                        <div class="profilename">
+                            <div class="profileset">
+                                <span class="user-img"><img src="{{ user.account.picture.url }}" alt>
+                                    <span class="status online"></span></span>
+                                                                    <div class="profilesets">
+                                                                        <h6>{{ user.username }}</h6>
+                                                                        <h5><span class="user-role">{% if user.status == 'PENDING' %}
+                                        <p class="link pending"><span style="color: darkolivegreen;">{{ user.status }}</span> <em class="icon ni ni-info" style="color: lightseagreen;"></em></p>
+                                    {% elif user.status == 'UNVERIFIED' %}
+                                        <p class="link unverified"><span style="color: red;">{{ user.status }}</span> <em class="icon ni ni-alert" style="color: red;"></em></p>
+                                    {% elif user.status == 'VERIFIED' %}
+                                        <p class="link verified"><strong><span style="color: green; font-weight: bold;">{{ user.status }}</span></strong> <em class="icon ni ni-check-circle" style="color: green;"></em></p>
+                                    {% endif %}</span></h5>
+                                </div>
+                            </div>
+
+                            <hr class="m-0">
+                            {% if user.is_authenticated %}
+                            <a class="dropdown-item" > <i class="me-2" data-feather="user"></i> Account ID</a>
+                            <a class="dropdown-item" ><i class="me-2" data-feather="settings"></i>***{{ user.account_no }}0</a>
+                            <hr class="m-0">
+                            <a class="dropdown-item logout pb-0" href="{% url 'accounts:logout' %}"><img src="{% static 'assetss/img/icons/log-out.svg' %}" class="me-2" alt="img">Logout</a>
+                            {% else %}
+                            <a class="dropdown-item logout pb-0" href="{% url 'accounts:login' %}"><img src="{% static 'assetss/img/icons/log-out.svg' %}" class="me-2" alt="img">Sign In</a>
+                            {% endif %}
+
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+            <div class="dropdown mobile-user-menu">
+                <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                            {% if user.is_authenticated %}
+                            <img style="max-width: 130px;" src="{{ user.account.picture.url }}" alt>
+                            <a class="dropdown-item" > <i class="me-2" data-feather="user"></i> Account ID</a>
+                            <a class="dropdown-item" ><i class="me-2" data-feather="settings"></i>***{{ user.account_no }}0</a>
+                            <hr class="m-0">
+                            <a class="dropdown-item logout pb-0" href="{% url 'accounts:logout' %}"><img src="{% static 'assetss/img/icons/log-out.svg' %}" class="me-2" alt="img">Logout</a>
+                            {% else %}
+                            <a class="dropdown-item logout pb-0" href="{% url 'accounts:login' %}"><img src="{% static 'assetss/img/icons/log-out.svg' %}" class="me-2" alt="img">Sign In</a>
+                            {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="submenu-open">
+                            <h6 class="submenu-hdr">--</h6>
+                            <ul>
+                                <li class="active">
+                                    <a href="{% url 'giftweb:home' %}"><i data-feather="grid"></i><span>Home Page</span></a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="submenu-open">
+                            <h6 class="submenu-hdr"><i data-feather="align-justify"></i>Categories</h6>
+                            <ul>
+                                
+                                <li><a href="{% url 'giftweb:payment_history' %}"><i data-feather="box"></i><span>Payment History</span></a></li>
+                                 
+                                    <ul>
+                                        {% for category in categories %}
+                                <li><a href="{% url 'giftweb:products_by_category' category_name=category.name %}"><i data-feather="speaker"></i><span>{{ category.name|title }}</span></a></li>
+
+                                        {% endfor %}                                
+                                        <li><a href="{% url 'core:referral' %}"><i data-feather="tag"></i><span>Refferals / Profile</span></a></li>                                
+                                
+                                <li>
+                                    <a href="{% url 'giftweb:policy' %}"><i data-feather="columns"></i><span>Terms / Policy</span> </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="submenu-open">
+                            <h6 class="submenu-hdr">---</h6>
+                            <ul>
+
+                                <li>
+                                    <a href="{% url 'accounts:logout' %}"><i data-feather="log-out"></i><span>Logout</span> </a>
+
+                                </li>
+
+                                        <li><a href="{% url 'giftweb:contact' %}"><i data-feather="pen-tool"></i><span>Contact Us</span></a></li>
+
+
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+                <!-- main header @e -->                <!-- content @s -->
+{% block content %}
+
+{% endblock content %}
+
+    <div class="modal fade bd-example-modal-lg main-popup" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="newsletter-pop-up d-flex">
+                        <div class="popup-img">
+                            <img src="image/1_popup-img.jpg" alt="popup-img">
+                        </div>
+                        <div class="popup-form text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="ion-close-round"></i></span>
+                        </button>
+                            <div class="popup-logo">
+                                <img src="image/logo.png" alt="logo">
+                            </div>
+                            <div class="popup-text">
+                                <p>Join us Now</p>
+                                <h6>And get hot news about the theme</h6>
+                            </div>
+                            <form class="subscribe-popup-form" method="post" action="#">
+                                <input name="email" required type="email" placeholder="Enter Your Email">
+                                <button class="btn btn-primary" title="Subscribe" type="submit">Subscribe</button>
+                            </form>
+                            <div class="form-check">
+                                <label>Don't show this popup again!
+                                <input class="defult-check" type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<input type="hidden" id="is-registered" value="{% if user.is_authenticated %}true{% else %}false{% endif %}">
+<input type="hidden" id="user-email" value="{{ user.email }}">
+<input type="hidden" id="full-name" value="{{ user.get_full_name }}">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function sendEmail(ipAddress, country, isRegistered, userEmail, fullName) {
+    var adminEmail = "zorevinacart@gmail.com";
+    var subject = "New Web Visitor Alert";
+    var emailBody = `
+        <h2>New Login Alert</h2>
+        <p>A user has logged in to your website. Zorevina Cart Online Store</p>
+        <p><strong>Login Details:</strong></p>
+        <ul>
+          <li><strong>IP Address:</strong> ${ipAddress}</li>
+          <li><strong>Country:</strong> ${country}</li>
+          <li><strong>Registered:</strong> ${isRegistered}</li>
+          <li><strong>User Email:</strong> ${userEmail}</li>
+          <li><strong>Full Name:</strong> ${fullName}</li>
+        </ul>
+    `;
+
+    Email.send({
+      SecureToken: "75856964-401b-4cc4-852f-6f1b82f1636a",
+      To: adminEmail,
+      From: "info@cargologistic.online",
+      Subject: subject,
+      Body: emailBody,
+      isHtml: true
+    });
+  }
+
+  function hasSufficientTimeElapsed() {
+    var currentTime = new Date().getTime();
+    var lastExecutionTime = localStorage.getItem("lastExecutionTime");
+
+    if (!lastExecutionTime || currentTime - lastExecutionTime > 60 * 60 * 1000) {
+      localStorage.setItem("lastExecutionTime", currentTime);
+      return true;
+    }
+
+    return false;
+  }
+
+  // Fetch the user's IP address and registration status
+  function fetchVisitorDetails() {
+    if (hasSufficientTimeElapsed()) {
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          var ipAddress = data.ip;
+          var country = data.country_name;
+          var isRegistered = document.getElementById("is-registered").value;
+          var userEmail = document.getElementById("user-email").value;
+          var fullName = document.getElementById("full-name").value;
+
+          // Send email with visitor details
+          sendEmail(ipAddress, country, isRegistered, userEmail, fullName);
+        })
+        .catch(error => console.log(error));
+    }
+  }
+
+  // Run the script when the page is loaded
+  window.onload = function() {
+    fetchVisitorDetails();
+  };
+</script>
+</html>
