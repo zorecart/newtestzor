@@ -211,12 +211,11 @@ CKEDITOR_CONFIGS = {
 
 
 
-# Use the SMTP backend
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_HOST = 'smtp.mailersend.net'  # MailerSend SMTP server
-EMAIL_PORT = 587                    # Port for TLS
-EMAIL_USE_TLS = True                # Use TLS for secure connection
-EMAIL_HOST_USER = 'MS_hEOIPz@zorevinacart.store'  # Your MailerSend SMTP username
-EMAIL_HOST_PASSWORD = 'iyaHfBTggO1xOkfg'         # Your MailerSend SMTP password
-DEFAULT_FROM_EMAIL = 'MS_hEOIPz@zorevinacart.store'  # The default "From" email address
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_PORT = 465  # Correct port for SSL
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'support@zorevinacart.com'
+EMAIL_HOST_PASSWORD = 'Response51a511$$'
+DEFAULT_FROM_EMAIL = 'support@zorevinacart.com'
