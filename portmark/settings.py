@@ -13,7 +13,7 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 CSRF_TRUSTED_ORIGINS = [
     "https://web-production-f4d8.up.railway.app",
-    "https://www.zorevinacart.store"
+    "https://www.zorevinacart.com"
 ]
 
 # Quick-start development settings - unsuitable for production
