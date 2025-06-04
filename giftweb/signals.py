@@ -200,7 +200,7 @@ def notify_admin_crypto_payment(sender, instance, created, **kwargs):
             </html>
             '''
         )
-        from_email = 'support@zorevinacart.com'
+        from_email = settings.EMAIL_HOST_USER
         recipient_list = ['zorevinacart@gmail.com']
         plain_message = strip_tags(message)  # Fallback plain text message
 
@@ -229,7 +229,7 @@ def notify_admin_payment(sender, instance, created, **kwargs):
             </html>
             '''
         )
-        from_email = 'support@zorevinacart.com'
+        from_email = settings.EMAIL_HOST_USER
         recipient_list = ['zorevinacart@gmail.com']
         plain_message = strip_tags(message)  # Fallback plain text message
 
