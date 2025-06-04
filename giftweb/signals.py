@@ -59,7 +59,7 @@ def generate_html_table_for_product(instance):
     return html_table
 
 def send_status_email(instance, subject, html_message):
-    from_email = 'support@zorevinacart.store'
+    from_email = 'support@zorevinacart.com'
     recipient_list = [instance.user.email]
     plain_message = strip_tags(html_message)
     send_mail(subject, plain_message, from_email, recipient_list, fail_silently=False, html_message=html_message)
@@ -105,7 +105,7 @@ def send_crypto_payment_status_email(sender, instance, created, **kwargs):
         <body style="background-color: #ffe6e6; font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
             <h2 style="color: #d9534f;">Payment Transaction Declined</h2>
             <p>Dear {username},</p>
-            <p>Your payment of <strong>${instance.amount}</strong> via {instance.get_payment_method_display()} has been declined. Please contact customer support at <a href="mailto:support@zorevinacart.store">support@zorevinacart.store</a> to resolve the issue immediately.</p>
+            <p>Your payment of <strong>${instance.amount}</strong> via {instance.get_payment_method_display()} has been declined. Please contact customer support at <a href="mailto:support@zorevinacart.com">support@zorevinacart.com</a> to resolve the issue immediately.</p>
             {html_table}
             <p>Warm regards,<br><strong>Zorevina Cart Online Store</strong></p>
         </body>
@@ -119,7 +119,7 @@ def send_crypto_payment_status_email(sender, instance, created, **kwargs):
         <body style="background-color: #fffae6; font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
             <h2 style="color: #f0ad4e;">Payment Transaction Cancelled</h2>
             <p>Dear {username},</p>
-            <p>Your payment of <strong>${instance.amount}</strong> via {instance.get_payment_method_display()} has been cancelled. For assistance, please contact customer support at <a href="mailto:support@zorevinacart.store">support@zorevinacart.store</a>.</p>
+            <p>Your payment of <strong>${instance.amount}</strong> via {instance.get_payment_method_display()} has been cancelled. For assistance, please contact customer support at <a href="mailto:support@zorevinacart.com">support@zorevinacart.com</a>.</p>
             {html_table}
             <p>Best regards,<br><strong>Zorevina Cart Online Store</strong></p>
         </body>
@@ -168,7 +168,7 @@ def send_payment_status_email(sender, instance, created, **kwargs):
         <body style="background-color: #fffae6; font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
             <h2 style="color: #f0ad4e;">Payment Transaction Cancelled</h2>
             <p>Dear {username},</p>
-            <p>Your payment of <strong>${instance.amount}</strong> via {instance.get_gift_card_type_display()} has been cancelled. Contact us at <a href="mailto:support@zorevinacart.store">support@zorevinacart.store</a>.</p>
+            <p>Your payment of <strong>${instance.amount}</strong> via {instance.get_gift_card_type_display()} has been cancelled. Contact us at <a href="mailto:support@zorevinacart.com">support@zorevinacart.com</a>.</p>
             {html_table}
             <p>Best regards,<br><strong>Zorevina Cart Online Store</strong></p>
         </body>
