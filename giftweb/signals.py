@@ -19,6 +19,7 @@ from django.utils.html import strip_tags
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from .models import CryptoPayment, Payment
+from django.conf import settings
 
 logger = logging.getLogger(__name__)
 
