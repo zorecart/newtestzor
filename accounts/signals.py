@@ -23,19 +23,4 @@ def create_account_no(sender, instance, *args, **kwargs):
             # if there is no other user, sets the user's account number to 10000000.
             instance.account_no = 10000000
 
-@receiver(post_save, sender=User)
-def post_save_create_profile(sender, instance, created, *args, **kwargs):
-    if created:
-        # Check if a Profile already exists for the user
-        if not Profile.objects.filter(user=instance).exists():
-            # Create a welcome message and send it to the user's email
-            subject = 'Welcome to Our store'
-            message = render_to_string('welcome_email.html', {'user': instance})
-            plain_message = strip_tags(message)
-            from_email = 'support@zorevinacart.com'  # Set your email address
-            to_email = instance.email
 
-            send_mail(subject, plain_message, from_email, [to_email], html_message=message)
-
-            # Create a profile for the user
-            Profile.objects.create(user=instance)
